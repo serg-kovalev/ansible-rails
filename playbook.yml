@@ -5,9 +5,8 @@
   roles:
     - user
     - rvm_io.ruby
-    - s3cmd
     - nodejs
-    - mysql
+    - postgresql
     - nginx-passenger
     - role: ssl
       when: use_ssl
