@@ -5,14 +5,16 @@
   roles:
     - user
     - zzet.rbenv
-    - nodejs
+    - role: nodejs
+      when: install_nodejs|bool
     - role: geerlingguy.mysql
       when: install_mysql|bool
     - role: geerlingguy.postgresql
       when: install_postgresql|bool
     - nginxinc.nginx
     - geerlingguy.passenger
-    - geerlingguy.certbot
+    - role: geerlingguy.certbot
+      when: use_ssl|bool
 
 # uncomment this when you setup an app
 # - name: deploy

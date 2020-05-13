@@ -19,6 +19,8 @@ all:
     postgresql_user_passw: '12345678'
     install_mysql: true
     mysql_user_passw: '12345678'
+    use_ssl: false
+    install_nodejs: true
 production:
   hosts:
     159.65.171.101              # The hostname or IP address of the remote server
