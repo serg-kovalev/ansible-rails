@@ -6,18 +6,18 @@
     - user
     - zzet.rbenv
     - nodejs
-    - postgresql
-    - nginx-passenger
-    - role: ssl
-      when: use_ssl
-      domainsets:
-        - domains:
-          - "{{ webserver_name }}"
-    - webserver
+    - role: geerlingguy.mysql
+      when: install_mysql|bool
+    - role: geerlingguy.postgresql
+      when: install_postgresql|bool
+    - nginxinc.nginx
+    - geerlingguy.passenger
+    - geerlingguy.certbot
 
-- name: deploy
-  hosts: all
-  remote_user: "{{ deploy_user }}"
-  gather_facts: no
-  roles:
-    - { role: deploy, tags: ['deploy'] }
+# uncomment this when you setup an app
+# - name: deploy
+#   hosts: all
+#   remote_user: "{{ deploy_user }}"
+#   gather_facts: no
+#   roles:
+#     - { role: deploy, tags: ['deploy'] }

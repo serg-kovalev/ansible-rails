@@ -1,6 +1,18 @@
-[submodule "roles/postgresql"]
-	path = roles/postgresql
-	url = git@github.com:geerlingguy/ansible-role-postgresql.git
 [submodule "roles/zzet.rbenv"]
 	path = roles/zzet.rbenv
 	url = git@github.com:zzet/ansible-rbenv-role.git
+[submodule "roles/geerlingguy.passenger"]
+	path = roles/geerlingguy.passenger
+	url = git@github.com:geerlingguy/ansible-role-passenger.git
+[submodule "roles/geerlingguy.certbot"]
+	path = roles/geerlingguy.certbot
+	url = git@github.com:geerlingguy/ansible-role-certbot.git
+[submodule "roles/nginxinc.nginx"]
+	path = roles/nginxinc.nginx
+	url = git@github.com:nginxinc/ansible-role-nginx.git
+[submodule "roles/geerlingguy.postgresql"]
+	path = roles/geerlingguy.postgresql
+	url = git@github.com:geerlingguy/ansible-role-postgresql.git
+[submodule "roles/geerlingguy.mysql"]
+	path = roles/geerlingguy.mysql
+	url = git@github.com:geerlingguy/ansible-role-mysql.git

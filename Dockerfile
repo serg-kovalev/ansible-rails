@@ -2,9 +2,9 @@ FROM ubuntu:bionic
 
 # Install prerequisities for Ansible
 RUN apt-get update
-RUN apt-get -y install python3 python3-nacl python3-pip libffi-dev sudo
+RUN apt-get -y install python3 python3-nacl python3-pip libffi-dev sudo cron
 
-# Upgrade pip to the latest one
+# Upgrade pip3 to the latest one
 # RUN pip3 install --upgrade pip
 
 # Install ansible

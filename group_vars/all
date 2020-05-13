@@ -6,19 +6,22 @@ deploy_directory: "/home/{{ deploy_user }}/apps/{{ app_name }}"
 postgresql_python_library: python3-psycopg2
 postgresql_databases:
   - name: "{{ app_name }}" # required; the rest are optional
-    login_user: "{{ app_name }}"
     owner: "{{ app_name }}"
+postgres_users_no_log: false
 postgresql_users:
   - name: "{{ app_name }}"
-    db: "{{ app_name }}"
+    password: "{{ postgresql_user_passw }}"
+postgresql_hba_entries:
+  - { type: local, database: all, user: postgres, auth_method: peer }
+  - { type: local, database: all, user: all, auth_method: peer }
+  - { type: host, database: all, user: all, address: '127.0.0.1/32', auth_method: md5 }
+  - { type: host, database: all, user: all, address: '::1/128', auth_method: md5 }
 
-mysql_db_name: "{{ app_name }}"
-mysql_db_user: "{{ app_name }}"
+mysql_databases:
+  - name: "{{ app_name }}"
+#mysql_users:
+#  - name: "{{ app_name }}"
+#    password: "{{ mysql_user_passw }}"
+#    encrypted: yes
 
-rvm1_user: "{{ deploy_user }}"
-rvm1_rubies: ["{{ruby_version}}"]
-rvm1_install_path: "/home/{{ deploy_user }}/.rvm"
-
-phusion_ruby_path: "/home/{{ deploy_user }}/.rvm/wrappers/{{ruby_version}}/ruby"
 s3_db_backup_location: s3://{{ app_name }}/db_backups
-letsencrypt_use_live_ca: true  # If true, will use the Live Let's Encrypt ACME servers; otherwise will use staging server
