@@ -11,7 +11,6 @@
       when: install_mysql|bool
     - role: geerlingguy.postgresql
       when: install_postgresql|bool
-    - nginxinc.nginx
     - geerlingguy.passenger
     - role: geerlingguy.certbot
       when: use_ssl|bool

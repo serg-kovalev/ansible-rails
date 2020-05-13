@@ -1,1 +1,3 @@
 ansible/
+Dockerfile
+docker-compose.yml

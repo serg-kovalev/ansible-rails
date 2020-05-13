@@ -27,6 +27,20 @@ This project is an Ansible playbook for provisioning and deploying a Rails app t
 
 ## Provisioning
 
+You can test provisioning with Docker on your local machine.
+
+  ```shell
+  # build an image
+  docker build -f docker/Dockerfile -t ansible-rails:v1 .
+  # start a container via docker-compose
+  docker-compose -f docker/docker-compose.yml start webapp
+  # after that you will be able to access webserver on port 8080
+  curl localhost:8080
+
+  # finally stop container
+  docker-compose -f docker/docker-compose.yml stop webapp
+  ```
+
 Provisioning is used to to setup the the server and initially deploy the application.
 
 To provision your server, run: `rake provision`.  This will do the following:

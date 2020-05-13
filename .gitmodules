@@ -7,9 +7,6 @@
 [submodule "roles/geerlingguy.certbot"]
 	path = roles/geerlingguy.certbot
 	url = git@github.com:geerlingguy/ansible-role-certbot.git
-[submodule "roles/nginxinc.nginx"]
-	path = roles/nginxinc.nginx
-	url = git@github.com:nginxinc/ansible-role-nginx.git
 [submodule "roles/geerlingguy.postgresql"]
 	path = roles/geerlingguy.postgresql
 	url = git@github.com:geerlingguy/ansible-role-postgresql.git

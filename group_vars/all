@@ -31,3 +31,6 @@ mysql_users:
 
 ### S3 settings
 s3_db_backup_location: s3://{{ app_name }}/db_backups
+
+### Passenger
+passenger_ruby: "/home/{{ deploy_user }}/.rbenv/versions/{{ rbenv['default_ruby'] }}/bin/ruby"

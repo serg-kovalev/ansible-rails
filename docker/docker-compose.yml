@@ -1,0 +1,8 @@
+version: "3.3"
+
+services:
+  webapp:
+    image: ansible-rails:v1
+    network_mode: bridge
+    ports:
+      - "8080:80"
