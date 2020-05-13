@@ -4,7 +4,7 @@
   remote_user: root
   roles:
     - user
-    - rvm_io.ruby
+    - zzet.rbenv
     - nodejs
     - postgresql
     - nginx-passenger

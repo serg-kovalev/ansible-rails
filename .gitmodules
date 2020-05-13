@@ -1,3 +1,6 @@
 [submodule "roles/postgresql"]
 	path = roles/postgresql
 	url = git@github.com:geerlingguy/ansible-role-postgresql.git
+[submodule "roles/zzet.rbenv"]
+	path = roles/zzet.rbenv
+	url = git@github.com:zzet/ansible-rbenv-role.git

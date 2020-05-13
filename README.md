@@ -1,6 +1,6 @@
 # ansible-rails
 
-This project is an Ansible playbook for provisioning and deploying a Rails/MySQL app to an Ubuntu server.  It is intended to be added to an existing Rails application folder.  Tested with: Rails 5.1.5, Ruby 2.4.3, Ubuntu 16.04 (Xenial).
+This project is an Ansible playbook for provisioning and deploying a Rails app to an Ubuntu server. It is intended to be added to an existing Rails application folder. Tested with: Rails 5.1.5, Ruby 2.4.3, Ubuntu 16.04 (Xenial).
 
 ## Demo
 
@@ -34,7 +34,7 @@ To provision your server, run: `rake provision`.  This will do the following:
 - Install the following:
   - RVM
   - Nginx
-  - Phusion passenger
+  - Phusion Passenger
   - MySQL or PostgreSQL
   - Libraries: libxslt-dev, libxml2-dev, libmysqlclient-dev, imagemagick
 - Create a user with ssh access and sudo authorization
