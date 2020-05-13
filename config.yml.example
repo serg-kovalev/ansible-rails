@@ -15,9 +15,9 @@ all:
       - 'deploy_user'
     rbenv_owner: 'deploy_user'
     rbenv_group: 'deploy_user'
-    install_postgresql: true
+    install_postgresql: false
     postgresql_user_passw: '12345678'
-    install_mysql: false
+    install_mysql: true
     mysql_user_passw: '12345678'
 production:
   hosts:

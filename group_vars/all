@@ -1,8 +1,11 @@
 ---
+### Global settings
 ansible_python_interpreter: /usr/bin/python3
 
+### Deploy settings
 deploy_directory: "/home/{{ deploy_user }}/apps/{{ app_name }}"
 
+### PostgreSQL settings
 postgresql_python_library: python3-psycopg2
 postgresql_databases:
   - name: "{{ app_name }}" # required; the rest are optional
@@ -17,11 +20,14 @@ postgresql_hba_entries:
   - { type: host, database: all, user: all, address: '127.0.0.1/32', auth_method: md5 }
   - { type: host, database: all, user: all, address: '::1/128', auth_method: md5 }
 
+### MySQL settings
 mysql_databases:
   - name: "{{ app_name }}"
-#mysql_users:
-#  - name: "{{ app_name }}"
-#    password: "{{ mysql_user_passw }}"
-#    encrypted: yes
+mysql_users:
+  - name: "{{ app_name }}"
+    host: "127.0.0.1"
+    password: "{{ mysql_user_passw }}"
+    priv: "{{ app_name }}.*:ALL"
 
+### S3 settings
 s3_db_backup_location: s3://{{ app_name }}/db_backups
